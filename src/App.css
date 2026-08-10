@@ -1,38 +1,103 @@
-.App {
-  text-align: center;
+/* ======================== */
+/* App Layout               */
+/* ======================== */
+.app {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
+/* ======================== */
+/* Left Panel               */
+/* ======================== */
+.left-panel {
+  flex: 0 0 42%;
+  background: linear-gradient(165deg, #21092f 0%, #380a5c 40%, #4e0d72 70%, #21092f 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative subtle pattern overlay */
+.left-panel::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(ellipse at 30% 50%, rgba(100, 72, 254, 0.15) 0%, transparent 60%),
+              radial-gradient(ellipse at 70% 30%, rgba(213, 58, 157, 0.1) 0%, transparent 50%);
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.left-panel-content {
+  position: relative;
+  z-index: 1;
+  padding: 40px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* ======================== */
+/* Right Panel              */
+/* ======================== */
+.right-panel {
+  flex: 1;
+  background: #f0f0f0;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.right-panel-content {
+  width: 100%;
+  max-width: 440px;
+  padding: 40px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* ======================== */
+/* Responsive Design        */
+/* ======================== */
+
+/* Tablet and smaller screens */
+@media (max-width: 900px) {
+  .app {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .left-panel {
+    flex: none;
+    min-height: 280px;
+    padding: 40px 20px;
+  }
+
+  .left-panel-content {
+    padding: 20px;
+  }
+
+  .right-panel {
+    flex: 1;
+  }
+
+  .right-panel-content {
+    max-width: 500px;
+    padding: 40px 24px;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 480px) {
+  .left-panel {
+    min-height: 260px;
+    padding: 30px 16px;
+  }
+
+  .left-panel-content {
+    padding: 10px;
+  }
+
+  .right-panel-content {
+    padding: 30px 20px;
   }
 }

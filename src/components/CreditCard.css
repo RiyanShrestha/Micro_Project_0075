@@ -1,0 +1,234 @@
+/* ======================== */
+/* Credit Card Container    */
+/* ======================== */
+.credit-card-container {
+  position: relative;
+  width: 380px;
+  height: 280px;
+}
+
+/* ======================== */
+/* Shared Card Base         */
+/* ======================== */
+.card {
+  position: absolute;
+  width: 350px;
+  height: 197px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+/* ======================== */
+/* Back Card                */
+/* ======================== */
+.card-back {
+  top: 70px;
+  right: -50px;
+  z-index: 1;
+  background: linear-gradient(160deg, #d2d3d9 0%, #c8c9cf 40%, #9496a1 100%);
+}
+
+.card-back-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.magnetic-stripe {
+  width: 100%;
+  height: 48px;
+  margin-top: 24px;
+  background: linear-gradient(90deg, #2e2e3a 0%, #1a1a2e 50%, #2e2e3a 100%);
+}
+
+.cvc-area {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 24px;
+  margin-top: 20px;
+  gap: 12px;
+}
+
+.cvc-stripe {
+  flex: 1;
+  height: 32px;
+  background: linear-gradient(90deg, #aeb1b6 0%, #c4c6cb 50%, #aeb1b6 100%);
+  border-radius: 4px;
+}
+
+.cvc-number {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  min-width: 42px;
+  text-align: right;
+}
+
+/* ======================== */
+/* Front Card               */
+/* ======================== */
+.card-front {
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background: linear-gradient(164deg, #6448fe 0%, #600594 50%, #d53a9d 100%);
+}
+
+.card-front-inner {
+  width: 100%;
+  height: 100%;
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* Card Logo (Chip + Ring) */
+.card-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-logo-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fff 0%, #e0e0e0 100%);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.card-logo-ring {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+/* Card Number */
+.card-number {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 3.5px;
+  color: #fff;
+  text-align: left;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  margin-top: auto;
+  margin-bottom: 4px;
+}
+
+/* Card Details Row */
+.card-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.card-holder {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: #fff;
+  text-transform: uppercase;
+  max-width: 240px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card-expiry {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+/* ======================== */
+/* Responsive               */
+/* ======================== */
+@media (max-width: 900px) {
+  .credit-card-container {
+    width: 320px;
+    height: 250px;
+    margin: 0 auto;
+  }
+
+  .card {
+    width: 300px;
+    height: 175px;
+  }
+
+  .card-back {
+    right: -20px;
+    top: 60px;
+  }
+
+  .card-number {
+    font-size: 17px;
+    letter-spacing: 2.5px;
+  }
+
+  .card-holder,
+  .card-expiry {
+    font-size: 10px;
+  }
+
+  .card-logo-circle {
+    width: 30px;
+    height: 30px;
+  }
+
+  .card-logo-ring {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .credit-card-container {
+    width: 290px;
+    height: 230px;
+  }
+
+  .card {
+    width: 275px;
+    height: 160px;
+    border-radius: 10px;
+  }
+
+  .card-back {
+    right: -10px;
+    top: 55px;
+  }
+
+  .card-front-inner {
+    padding: 18px 20px;
+  }
+
+  .card-number {
+    font-size: 15px;
+    letter-spacing: 2px;
+  }
+
+  .magnetic-stripe {
+    height: 38px;
+    margin-top: 18px;
+  }
+
+  .cvc-area {
+    margin-top: 14px;
+    padding: 0 18px;
+  }
+
+  .cvc-stripe {
+    height: 26px;
+  }
+}
